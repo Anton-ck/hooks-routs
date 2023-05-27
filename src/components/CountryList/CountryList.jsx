@@ -1,4 +1,5 @@
 import { Grid, GridItem } from 'components';
+import { Link } from 'react-router-dom';
 
 export const CountryList = ({ countries }) => {
   console.log(countries);
@@ -6,7 +7,9 @@ export const CountryList = ({ countries }) => {
     <Grid>
       {countries.map(country => (
         <GridItem key={country.id}>
-          <img src={country.flag} alt={country.country} />
+          <Link to={`/country/${country.id}`}>
+            <img src={country.flag} alt={country.country} />
+          </Link>
         </GridItem>
       ))}
     </Grid>
